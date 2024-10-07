@@ -1,0 +1,24 @@
+function calcularFatorial(numero: number): number {
+    // Verificação se o número é negativo
+    if (numero < 0) {
+        throw new Error("O fatorial não está definido para números negativos.");
+    }
+    
+    let fatorial: number = 1;
+
+    // loop
+    for (let i = 2; i <= numero; i++) {
+        fatorial *= i;
+    }
+
+    return fatorial;
+}
+
+// aRea de resultado
+const entrada: number = parseInt(prompt("Digite um número para calcular o fatorial:") || "0");
+try {
+    const resultado: number = calcularFatorial(entrada);
+    console.log(`O fatorial de ${entrada} é ${resultado}.`);
+} catch (error) {
+    console.error(error.message);
+}

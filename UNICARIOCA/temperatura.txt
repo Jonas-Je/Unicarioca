@@ -1,0 +1,33 @@
+function celsiusParaFahrenheit(celsius: number): number {
+    return (celsius * 9/5) + 32;
+}
+
+function fahrenheitParaCelsius(fahrenheit: number): number {
+    return (fahrenheit - 32) * 5/9;
+}
+
+function converterTemperatura(): void {
+    const opcao: string = prompt("Escolha a conversão:\n1. Celsius para Fahrenheit\n2. Fahrenheit para Celsius") || "";
+
+    if (opcao === "1") {
+        const celsius: number = parseFloat(prompt("Digite a temperatura em Celsius:") || "0");
+        if (isNaN(celsius)) {
+            console.log("Por favor, insira um valor válido para Celsius.");
+        } else {
+            const fahrenheit: number = celsiusParaFahrenheit(celsius);
+            console.log(`${celsius}°C é igual a ${fahrenheit.toFixed(2)}°F.`);
+        }
+    } else if (opcao === "2") {
+        const fahrenheit: number = parseFloat(prompt("Digite a temperatura em Fahrenheit:") || "0");
+        if (isNaN(fahrenheit)) {
+            console.log("Por favor, insira um valor válido para Fahrenheit.");
+        } else {
+            const celsius: number = fahrenheitParaCelsius(fahrenheit);
+            console.log(`${fahrenheit}°F é igual a ${celsius.toFixed(2)}°C.`);
+        }
+    } else {
+        console.log("Opção inválida. Por favor, escolha 1 ou 2.");
+    }
+}
+
+converterTemperatura();

@@ -1,0 +1,16 @@
+function aprovacao(): void {
+
+    const nota1: number = parseFloat(prompt("Digite a primeira nota:") || "0");
+    const nota2: number = parseFloat(prompt("Digite a segunda nota:") || "0");
+    const nota3: number = parseFloat(prompt("Digite a terceira nota:") || "0");
+
+    const media: number = (nota1 + nota2 + nota3) / 3;
+
+    if (media >= 7) {
+        console.log("Aprovado");
+    } else {
+        console.log("Reprovado");
+    }
+}
+
+aprovacao();

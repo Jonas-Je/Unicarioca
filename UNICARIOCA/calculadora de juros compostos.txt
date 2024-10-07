@@ -1,0 +1,18 @@
+function calcularMontante(principal: number, taxaJuros: number, anos: number): number {
+
+    const r = taxaJuros / 100;
+  
+    const montante = principal * Math.pow(1 + r, anos);
+    return montante;
+}
+
+const principal: number = parseFloat(prompt("Digite o valor inicial do investimento (P):") || "0");
+const taxaJuros: number = parseFloat(prompt("Digite a taxa de juros anual (em %):") || "0");
+const anos: number = parseInt(prompt("Digite o número de anos de investimento (n):") || "0");
+
+if (isNaN(principal) || isNaN(taxaJuros) || isNaN(anos) || anos < 0) {
+    console.log("Por favor, insira valores válidos.");
+} else {
+    const montanteFinal: number = calcularMontante(principal, taxaJuros, anos);
+    console.log(`O montante final após ${anos} anos é: R$ ${montanteFinal.toFixed(2)}`);
+}

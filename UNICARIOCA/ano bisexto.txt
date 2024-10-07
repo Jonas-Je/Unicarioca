@@ -1,0 +1,17 @@
+function verificarAnoBissexto(ano: number): boolean {
+    // Verifica se o ano é bissexto
+    return (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
+}
+
+// area de resultado
+const entrada: number = parseInt(prompt("Digite um ano para verificar se é bissexto:") || "0");
+
+if (isNaN(entrada)) {
+    console.log("Por favor, digite um número válido.");
+} else {
+    if (verificarAnoBissexto(entrada)) {
+        console.log(`${entrada} é um ano bissexto.`);
+    } else {
+        console.log(`${entrada} não é um ano bissexto.`);
+    }
+}

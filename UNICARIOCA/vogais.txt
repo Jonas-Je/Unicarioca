@@ -1,0 +1,20 @@
+function contarVogais(texto: string): number {
+    const textoMinusc = texto.toLowerCase();
+    let contagem: number = 0;
+
+    // conjunto de vogais
+    const vogais: string = 'aãeéiíoôóu';
+
+    for (let char of textoMinusc) {
+        if (vogais.includes(char)) {
+            contagem++;
+        }
+    }
+
+    return contagem;
+}
+
+
+const entrada: string = prompt("Digite uma frase ou palavra:") || "";
+const resultado: number = contarVogais(entrada);
+console.log(`O número de vogais na string é: ${resultado}`);

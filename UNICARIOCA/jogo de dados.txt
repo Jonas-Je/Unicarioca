@@ -1,0 +1,22 @@
+function jogarDado(): number {
+
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+function jogar(): void {
+    const primeiro: number = jogarDado();
+    const segundo: number = jogarDado();
+    
+    const soma: number = primeiro + segundo;
+
+    console.log(`Você lançou ${primeiro} e ${segundo}.`);
+    console.log(`A soma é: ${soma}`);
+
+    if (soma === 7 || soma === 11) {
+        prompt("Você ganhou!");
+    } else {
+        prompt("Você perdeu!");
+    }
+}
+
+jogar();
